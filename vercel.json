@@ -7,7 +7,19 @@
       ]
     },
     {
-      "source": "/(.*\\.(css|js|webp|jpg|jpeg|png|mp4|ico))",
+      "source": "/styles.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800" }
+      ]
+    },
+    {
+      "source": "/script.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800" }
+      ]
+    },
+    {
+      "source": "/logoicon.webp",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=604800" }
       ]
