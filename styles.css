@@ -38,6 +38,43 @@ button {
   font: inherit;
 }
 
+button,
+a,
+input,
+select,
+textarea,
+.member-card,
+.brand,
+.nav-toggle,
+.sound-toggle,
+.filter-button,
+.search-clear,
+.modal__close,
+[data-close-modal] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus,
+.member-card:focus,
+.brand:focus,
+.nav-toggle:focus,
+.sound-toggle:focus,
+.filter-button:focus,
+.search-clear:focus,
+.modal__close:focus,
+[data-close-modal]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
 .loader {
   position: fixed;
   inset: 0;
