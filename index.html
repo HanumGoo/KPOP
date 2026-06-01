@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern clan and guild organizational chart template."
+    />
+    <title>KPOP</title>
+    <link rel="icon" href="logoicon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="assets/logo.jpg" as="image" fetchpriority="high" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="loader" id="loader" aria-label="Opening guild intro">
+      <div class="loader__image" role="img" aria-label="Intro image placeholder">
+        <img src="assets/logo.jpg" alt="" width="320" height="320" decoding="async" fetchpriority="high" />
+        <span>KPOP</span>
+      </div>
+      <div class="loader__ring"></div>
+      <p>Knight Pious Of Powerful</p>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Guild home">
+        <span class="brand__mark">K</span>
+        <span>KPOP</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#organization">Members</a>
+        <a href="#clips">Clip</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="home" aria-label="Home">
+        <video
+          class="hero__video"
+          muted
+          loop
+          playsinline
+          autoplay
+          preload="none"
+          poster="assets/clips/homepage.webp"
+          data-src="assets/0601(1).mp4"
+        ></video>
+        <div class="hero__shade"></div>
+
+        <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">
+          <span class="sound-toggle__icon" aria-hidden="true">♪</span>
+          <span class="sound-toggle__text">Muted</span>
+        </button>
+
+        <div class="hero__content">
+          <div class="hero__copy reveal">
+            <p class="eyebrow">Knight Pious Of Powerful</p>
+            <h1>We Are The Pious...</h1>
+            <p>
+              Clan who grow together, share knowledge,
+              doing silly stuff, and show up when the moment matters.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#organization">View Members</a>
+              <a class="button button--ghost" href="#clips">Watch Clips</a>
+            </div>
+          </div>
+
+          <div class="clan-logo reveal reveal--delay">
+            <div class="clan-logo__frame">
+              <img src="assets/logo.jpg" alt="Clan logo placeholder" width="360" height="360" decoding="async" />
+              <span>Clan Logo</span>
+            </div>
+            <p>KPOP</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section org-section" id="organization">
+        <div class="section-heading reveal">  
+          <h2>MEMBERS</h2>
+        </div>
+
+        <div class="org-filters reveal" aria-label="Member filters">
+          <label class="search-filter">
+            <span class="filter-label">Search</span>
+            <input class="member-search" type="search" placeholder="Search name..." autocomplete="off" />
+            <button class="search-clear" type="button" aria-label="Clear member search">×</button>
+          </label>
+
+          <div class="filter-group" role="group" aria-label="Filter by role">
+            <span class="filter-label">Role</span>
+            <button class="filter-button is-active" type="button" data-filter-type="role" data-filter-value="all">All</button>
+            <button class="filter-button" type="button" data-filter-type="role" data-filter-value="president">President</button>
+            <button class="filter-button" type="button" data-filter-type="role" data-filter-value="vice-president">Vice</button>
+            <button class="filter-button" type="button" data-filter-type="role" data-filter-value="members">Members</button>
+          </div>
+
+          <div class="filter-group" role="group" aria-label="Filter by gender">
+            <span class="filter-label">Gender</span>
+            <button class="filter-button is-active" type="button" data-filter-type="gender" data-filter-value="all">All</button>
+            <button class="filter-button" type="button" data-filter-type="gender" data-filter-value="girl">&female; Girl</button>
+            <button class="filter-button" type="button" data-filter-type="gender" data-filter-value="boy">&male; Boy</button>
+          </div>
+
+          <span class="filter-count" aria-live="polite">Showing all members</span>
+        </div>
+
+        <div class="org-grid" aria-label="Guild member nodes">
+          <button class="member-card reveal" type="button" data-member="yona" data-role="vice-president" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Yona.png" alt="Leader image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Yona.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Vice President</span>
+            <span class="member-card__name">Yona</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-member="ghermykenz" data-role="president" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/GhermyKenz.png" alt="Officer image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/GhermyKenz.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">President</span>
+            <span class="member-card__name">GhermyKenz</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-member="kaifiya" data-role="vice-president" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Kaifiya.png" alt="Strategist image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Kaifiya.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Vice President</span>
+            <span class="member-card__name">Kaifiya Hyouka</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-member="hanum" data-role="members" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Hanum.png" alt="Raid captain image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Hanum.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Hanum </span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-member="sisi" data-role="members" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/sisi.png" alt="Clip keeper image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Sisi.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Sisi</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-member="mister" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Mister.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Mister.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Mister x</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Jinmori.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Jinmori.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Jinmori</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Yagi.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Yagi.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Yagi</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Mob.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Mob.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Mob</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Kegelapan.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Kegelapan.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Kegelapan</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Ciel.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Ciel.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Ciel</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Ina.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Ina.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Ina</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Suns.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Suns.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Suns</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Doms.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Doms.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Doms</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Patrik.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Patrik.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Patrik</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Adly.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Adly.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Adly</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Mldxone.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Mldxone.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Mldxone</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Alex.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Alex.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Alex</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Ayamkecap.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Ayamkecap.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Ayamkecap</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Damiungker.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Damiungker.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Damiungker</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Dyzen.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Dyzen.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Dyzen</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Dikham.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Dikham.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Dikham</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Edgar.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Edgar.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Edgar</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Elgato.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Elgato.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Elgato</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Frost.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Frost.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Frost</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Fuga.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Fuga.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Fuga</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Ver.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Ver.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Ver</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Jje.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Jje.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Jje</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Justfaa.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Justfaa.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Justfaa</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Knle.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Knle.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Knle</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Memet.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Memet.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Memet</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Michael.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Michael.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Michael</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/mori.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/mori.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">mori</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Panes.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Panes.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Panes</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Ryofirdaus.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Ryofirdaus.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Ryofirdaus</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Ipaw.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Ipaw.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Ipaw</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Nezz.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Nezz.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Nezz</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Raps.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Raps.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Raps</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Shaqil.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Shaqil.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Shaqil</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Stevano.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Stevano.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Stevano</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Syn.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Syn.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Syn</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Pitaufu.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Pitaufu.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Pitaufu</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Wayne.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Wayne.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Wayne</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Penauts.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Penauts.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Penauts</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="boy">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Pikoo.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Pikoo.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Boy">&male;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Pikoo</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Geo.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Geo.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Geo</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/Hyura.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/Hyura.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">Hyura</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/yeekipe.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/yeekipe.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">yeekipe</span>
+          </button>
+
+          <button class="member-card reveal" type="button" data-role="members" data-gender="girl">
+            <span class="member-card__avatar">
+              <img class="member-card__image member-card__image--base" src="assets/members/RobloxAva/mikasa.png" alt="Core member image placeholder" />
+              <img class="member-card__image member-card__image--focus" src="assets/members/RobloxAnime/mikasa.png" alt="" />
+              <span>Image</span>
+            </span>
+            <span class="member-card__gender" aria-label="Girl">&female;</span>
+            <span class="member-card__rank">Members</span>
+            <span class="member-card__name">mikasa</span>
+          </button>
+        </div>
+        <p class="org-empty" hidden>No members match this filter.</p>
+      </section>
+
+      <section class="section clips-section" id="clips">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Highlights</p>
+          <h2>KPOP Clips</h2>
+        </div>
+
+        <div class="clips-grid">
+          <article class="clip-card reveal">
+            <div class="video-shell">
+              <video controls preload="none" poster="assets/clips/homepage.webp" data-src="assets/clips/0601(1).mp4"></video>
+              <span>Clip Video</span>
+            </div>
+            <h3>KPOP X Supersonic Montagem Edit (by Hanum)</h3>
+            <p>Music: Supersonic (Montagem Ultra Slowed).</p>
+            <p>"Bombarjila Krokodila?"</p>
+          </article>
+
+          <article class="clip-card reveal">
+            <div class="video-shell">
+              <video controls preload="none" poster="assets/clips/homepage.webp" data-src="assets/clips/clip-2.mp4"></video>
+              <span>Clip Video</span>
+            </div>
+            <h3>Boleh diisi video bagi yang ada</h3>
+            <p>tapi yg keren ya dawg, sama berhubungan dengan kpop videonya. maksimal 20 mb (cmn 1 slot). databaseku habis resource dawg kalau lebih dari itu🗿 (tar dinilai sama hanum dulu, dan gak lebay, rasis, mesum, bokep, dan jomok)</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="about-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Why we gather</p>
+            <h2>About KPOP</h2>
+          </div>
+          <div class="about-copy reveal reveal--delay">
+            <p>
+              This clan is built around teamwork, consistency, and respect. We are
+              here to play better together, help each other improve, and create a
+              place where members feel proud to wear the clan name.
+            </p>
+            <h4>Hanum:</h4>
+            <p>
+              "This gathering isn't about where we are.. it's about who we're with. 
+              After all, fun isn't found in a place; 
+              it's found in the people who turn moments into memories and conversations into laughter."
+            </p>
+            <p>
+              (who let her cook dawg? lololol)
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>KPOP &copy; 2026. One for All.</p>
+    </footer>
+
+    <div class="modal" id="memberModal" aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal></div>
+      <article class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalName">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close profile">
+          ×
+        </button>
+        <div class="modal__image">
+          <img id="modalImage" alt="" />
+          <span>Profile Image</span>
+        </div>
+        <div class="modal__content">
+          <p class="modal__rank" id="modalRank"></p>
+          <h2 id="modalName"></h2>
+          <p id="modalDescription"></p>
+        </div>
+      </article>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
