@@ -37,7 +37,6 @@ const members = {
   mister: {
     rank: "Members",
     name: "Mister x",
-    image: "assets/members/RobloxAva/Mister.png",
     description:
       "Mister x is a valued member of the clan. He is known for his dedication, teamwork, and positive attitude, making him an essential part of the clan's success.",
   },
