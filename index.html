@@ -56,7 +56,8 @@
           autoplay
           preload="none"
           poster="assets/clips/homepage.webp"
-          data-src="assets/0601(1).mp4"
+          data-src="assets/clips/home.mp4"
+          data-src-webm="assets/clips/home.webm"
         ></video>
         <div class="hero__shade"></div>
 
@@ -668,25 +669,14 @@
           <h2>KPOP Clips</h2>
         </div>
 
-        <div class="clips-grid">
-          <article class="clip-card reveal">
-            <div class="video-shell">
-              <video controls preload="none" poster="assets/clips/homepage.webp" data-src="assets/clips/0601(1).mp4"></video>
-              <span>Clip Video</span>
-            </div>
-            <h3>KPOP X Supersonic Montagem Edit (by Hanum)</h3>
-            <p>Music: Supersonic (Montagem Ultra Slowed).</p>
-            <p>"Bombarjila Krokodila?"</p>
-          </article>
+        <div class="clips-block reveal">
+          <h3 class="clips-block__title">Videos</h3>
+          <div class="clips-grid clips-grid--videos" id="clipsVideos" aria-label="KPOP video clips"></div>
+        </div>
 
-          <article class="clip-card reveal">
-            <div class="video-shell">
-              <video controls preload="none" poster="assets/clips/homepage.webp" data-src="assets/clips/clip-2.mp4"></video>
-              <span>Clip Video</span>
-            </div>
-            <h3>Boleh diisi video bagi yang ada</h3>
-            <p>tapi yg keren ya dawg, sama berhubungan dengan kpop videonya. maksimal 20 mb (cmn 1 slot). databaseku habis resource dawg kalau lebih dari itu🗿 (tar dinilai sama hanum dulu, dan gak lebay, rasis, mesum, bokep, dan jomok)</p>
-          </article>
+        <div class="clips-block reveal">
+          <h3 class="clips-block__title">Pictures</h3>
+          <div class="clips-grid clips-grid--pictures" id="clipsPictures" aria-label="KPOP picture gallery"></div>
         </div>
       </section>
 
@@ -738,6 +728,7 @@
       </article>
     </div>
 
+    <script src="clips-media.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>

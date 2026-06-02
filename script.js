@@ -66,6 +66,24 @@ const activeFilters = {
   search: "",
 };
 
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.18 }
+);
+
+const observeRevealElements = () => {
+  document.querySelectorAll(".reveal").forEach((element) => {
+    revealObserver.observe(element);
+  });
+};
+
 const toWebp = (src) => (src ? src.replace(/\.(png|jpe?g)$/i, ".webp") : "");
 
 const applyBestImageFormat = (img, originalSrc) => {
@@ -139,13 +157,26 @@ const initDeferredHeroVideo = () => {
     if (heroVideo.dataset.loaded) return;
     heroVideo.dataset.loaded = "1";
 
-    const src = heroVideo.dataset.src || "assets/0601(1).mp4";
+    const mp4 = heroVideo.dataset.src || "assets/clips/home.mp4";
+    const webm = heroVideo.dataset.srcWebm || "assets/clips/home.webm";
+
     if (!heroVideo.querySelector("source")) {
-      const source = document.createElement("source");
-      source.src = src;
-      source.type = "video/mp4";
-      heroVideo.appendChild(source);
+      const mp4Source = document.createElement("source");
+      mp4Source.src = mp4;
+      mp4Source.type = "video/mp4";
+      heroVideo.appendChild(mp4Source);
+
+      const webmSource = document.createElement("source");
+      webmSource.src = webm;
+      webmSource.type = "video/webm";
+      heroVideo.appendChild(webmSource);
     }
+
+    heroVideo.loop = true;
+    heroVideo.addEventListener("ended", () => {
+      heroVideo.currentTime = 0;
+      heroVideo.play().catch(() => {});
+    });
 
     heroVideo.load();
     heroVideo.play().catch(() => {});
@@ -158,38 +189,121 @@ const initDeferredHeroVideo = () => {
   }
 };
 
-const initLazyVideos = () => {
-  const videos = [...document.querySelectorAll("video[data-src]")].filter(
-    (video) => !video.classList.contains("hero__video")
-  );
+const parseGoogleDriveId = (value) => {
+  if (!value) return null;
 
-  if (!videos.length) return;
+  const trimmed = value.trim();
+  if (/^[a-zA-Z0-9_-]{10,}$/.test(trimmed) && !trimmed.includes("/")) return trimmed;
+
+  try {
+    const url = new URL(trimmed.startsWith("http") ? trimmed : `https://${trimmed}`);
+    const pathMatch = url.pathname.match(/\/file\/d\/([^/]+)/);
+    if (pathMatch) return pathMatch[1];
+
+    const id = url.searchParams.get("id");
+    if (id) return id;
+  } catch {
+    return null;
+  }
+
+  return null;
+};
+
+const buildDriveEmbedUrl = (driveValue) => {
+  const fileId = parseGoogleDriveId(driveValue);
+  if (!fileId) return null;
+  return `https://drive.google.com/file/d/${fileId}/preview`;
+};
+
+const createClipParagraphs = (lines = []) =>
+  lines.map((line) => `<p>${line}</p>`).join("");
+
+const renderDriveClipCard = (clip) => {
+  const embedUrl = buildDriveEmbedUrl(clip.drive);
+  const shellContent = embedUrl
+    ? `<iframe
+        class="drive-shell__iframe"
+        data-drive-src="${embedUrl}"
+        title="${clip.title || "KPOP clip"}"
+        loading="lazy"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      ></iframe>`
+    : `<div class="media-shell__placeholder">Add a Google Drive link in clips-media.js</div>`;
+
+  return `
+    <article class="clip-card reveal">
+      <div class="video-shell drive-shell">${shellContent}</div>
+      <h3>${clip.title || "Untitled clip"}</h3>
+      ${createClipParagraphs(clip.lines)}
+    </article>
+  `;
+};
+
+const renderPictureCard = (picture) => {
+  const src = picture.src || "";
+  const shellContent = src
+    ? `<img src="${src}" alt="${picture.alt || picture.title || "KPOP gallery photo"}" loading="lazy" decoding="async" />`
+    : `<div class="media-shell__placeholder">Add an image path in clips-media.js</div>`;
+
+  return `
+    <article class="clip-card clip-card--picture reveal">
+      <div class="picture-shell">${shellContent}</div>
+      <h3>${picture.title || "Gallery photo"}</h3>
+    </article>
+  `;
+};
+
+const initLazyDriveEmbeds = () => {
+  const iframes = [...document.querySelectorAll(".drive-shell__iframe[data-drive-src]")];
+  if (!iframes.length) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
 
-        const video = entry.target;
-        if (video.dataset.loaded) return;
-        video.dataset.loaded = "1";
+        const iframe = entry.target;
+        if (iframe.src) return;
 
-        const src = video.dataset.src;
-        if (src && !video.querySelector("source")) {
-          const source = document.createElement("source");
-          source.src = src;
-          source.type = "video/mp4";
-          video.appendChild(source);
-        }
-
-        video.load();
-        observer.unobserve(video);
+        iframe.src = iframe.dataset.driveSrc;
+        observer.unobserve(iframe);
       });
     },
     { rootMargin: "240px 0px" }
   );
 
-  videos.forEach((video) => observer.observe(video));
+  iframes.forEach((iframe) => observer.observe(iframe));
+};
+
+const initClipsMedia = () => {
+  const media = window.CLIPS_MEDIA || { videos: [], pictures: [] };
+  const videosRoot = document.querySelector("#clipsVideos");
+  const picturesRoot = document.querySelector("#clipsPictures");
+
+  if (videosRoot) {
+    const videos = media.videos?.length ? media.videos : [];
+    videosRoot.innerHTML = videos.length
+      ? videos.map(renderDriveClipCard).join("")
+      : `<p class="clips-empty">No videos yet. Add entries in clips-media.js.</p>`;
+  }
+
+  if (picturesRoot) {
+    const pictures = media.pictures?.length ? media.pictures : [];
+    picturesRoot.innerHTML = pictures.length
+      ? pictures.map(renderPictureCard).join("")
+      : `<p class="clips-empty">No pictures yet. Add entries in clips-media.js.</p>`;
+  }
+
+  document.querySelectorAll("#clipsPictures img").forEach((image) => {
+    if (image.complete && image.naturalWidth > 0) {
+      image.classList.add("image-loaded");
+    }
+    image.addEventListener("load", () => image.classList.add("image-loaded"));
+    image.addEventListener("error", () => image.classList.remove("image-loaded"));
+  });
+
+  initLazyDriveEmbeds();
 };
 
 const initLazyMemberImages = () => {
@@ -241,10 +355,11 @@ const initMediaPerformance = () => {
   initCriticalImages();
   initLazyMemberImages();
   initDeferredHeroVideo();
-  initLazyVideos();
+  initClipsMedia();
 };
 
 initMediaPerformance();
+observeRevealElements();
 
 window.addEventListener("load", () => {
   connectHomeMediaFallbacks();
@@ -268,22 +383,6 @@ soundToggle.addEventListener("click", () => {
   soundToggle.querySelector(".sound-toggle__text").textContent = heroVideo.muted
     ? "Muted"
     : "Sound On";
-});
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.18 }
-);
-
-document.querySelectorAll(".reveal").forEach((element) => {
-  revealObserver.observe(element);
 });
 
 document.querySelectorAll("img").forEach((image) => {
