@@ -728,7 +728,7 @@ document.querySelectorAll(".member-card").forEach((card) => {
 
     // Assign src — browser starts downloading only at this point
     modalImage.src = modalSrc;
-    modalImage.alt = `${member.name || cardName} profile image`;
+    modalImage.alt = `${member.name || cardName} Loading`;
 
     if (modalImage.complete && modalImage.naturalWidth > 0) {
       modalImage.classList.add("image-loaded");
