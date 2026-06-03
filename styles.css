@@ -850,13 +850,72 @@ h3 {
   object-fit: cover;
 }
 
-.drive-shell__iframe,
+.video-thumb-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.video-thumb-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  transform: scale(1.02);
+}
+
+.video-thumb-img.image-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.video-thumb-wrapper:hover .video-thumb-img {
+  transform: scale(1.05);
+}
+
+.video-thumb-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 56px;
+  height: 56px;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+}
+
+.video-thumb-play svg {
+  width: 100%;
+  height: 100%;
+}
+
+.video-thumb-wrapper:hover .video-thumb-play {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
 .picture-shell img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
+  display: block;
+  object-fit: cover;
+  opacity: 0;
 }
 
 .picture-shell {
@@ -870,11 +929,6 @@ h3 {
   background:
     linear-gradient(135deg, rgba(255, 210, 31, 0.14), transparent),
     #050505;
-}
-
-.picture-shell img {
-  object-fit: cover;
-  opacity: 0;
 }
 
 .picture-shell img.image-loaded {
@@ -944,6 +998,7 @@ h3 {
 .modal__panel {
   position: relative;
   width: min(920px, 100%);
+  max-height: min(88vh, 680px);
   display: grid;
   grid-template-columns: minmax(240px, 0.76fr) 1fr;
   gap: 28px;
@@ -955,6 +1010,7 @@ h3 {
   box-shadow: var(--shadow);
   transform: translateY(24px) scale(0.96);
   transition: transform 0.25s ease;
+  overflow: hidden;
 }
 
 .modal.is-open .modal__panel {
@@ -1007,8 +1063,15 @@ h3 {
 
 .modal__content {
   display: grid;
-  align-content: center;
+  align-content: start;
   padding: 24px 20px 24px 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal__content::-webkit-scrollbar {
+  display: none;
 }
 
 .modal__rank {
@@ -1099,6 +1162,21 @@ h3 {
   .about-layout,
   .modal__panel {
     grid-template-columns: 1fr;
+  }
+
+  .modal__panel {
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .modal__panel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .modal__content {
+    overflow-y: visible;
   }
 
   .hero__content {

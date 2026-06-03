@@ -374,19 +374,22 @@ const initDeferredHeroVideo = () => {
   }
 };
 
-const parseGoogleDriveId = (value) => {
+const parseYouTubeId = (value) => {
   if (!value) return null;
 
   const trimmed = value.trim();
-  if (/^[a-zA-Z0-9_-]{10,}$/.test(trimmed) && !trimmed.includes("/")) return trimmed;
+  // Raw ID (11 chars, no slashes)
+  if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) return trimmed;
 
   try {
     const url = new URL(trimmed.startsWith("http") ? trimmed : `https://${trimmed}`);
-    const pathMatch = url.pathname.match(/\/file\/d\/([^/]+)/);
+    // youtu.be/ID
+    if (url.hostname === "youtu.be") return url.pathname.slice(1).split("/")[0] || null;
+    // youtube.com/watch?v=ID or /shorts/ID or /embed/ID
+    const v = url.searchParams.get("v");
+    if (v) return v;
+    const pathMatch = url.pathname.match(/\/(?:shorts|embed|v)\/([a-zA-Z0-9_-]{11})/);
     if (pathMatch) return pathMatch[1];
-
-    const id = url.searchParams.get("id");
-    if (id) return id;
   } catch {
     return null;
   }
@@ -394,31 +397,30 @@ const parseGoogleDriveId = (value) => {
   return null;
 };
 
-const buildDriveEmbedUrl = (driveValue) => {
-  const fileId = parseGoogleDriveId(driveValue);
-  if (!fileId) return null;
-  return `https://drive.google.com/file/d/${fileId}/preview`;
-};
-
 const createClipParagraphs = (lines = []) =>
   lines.map((line) => `<p>${line}</p>`).join("");
 
-const renderDriveClipCard = (clip) => {
-  const embedUrl = buildDriveEmbedUrl(clip.drive);
-  const shellContent = embedUrl
-    ? `<iframe
-        class="drive-shell__iframe"
-        data-drive-src="${embedUrl}"
-        title="${clip.title || "KPOP clip"}"
-        loading="lazy"
-        allow="autoplay; fullscreen"
-        allowfullscreen
-      ></iframe>`
-    : `<div class="media-shell__placeholder">Add a Google Drive link in clips-media.js</div>`;
+const renderVideoClipCard = (clip) => {
+  const ytId = parseYouTubeId(clip.youtube);
+  const watchUrl = ytId ? `https://www.youtube.com/watch?v=${ytId}` : "#";
+  const thumbUrl = ytId ? `https://i.ytimg.com/vi/${ytId}/hqdefault.jpg` : "";
+  const embedUrl = ytId ? `https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1` : "";
+
+  const shellContent = ytId
+    ? `<div class="video-thumb-wrapper" data-yt-id="${ytId}" data-embed="${embedUrl}">
+        <img class="video-thumb-img" src="${thumbUrl}" alt="${clip.title || "KPOP clip"}" loading="lazy" decoding="async" />
+        <button class="video-thumb-play" type="button" aria-label="Play ${clip.title || "KPOP clip"}">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="rgba(5,5,5,0.72)"/>
+            <polygon points="19,14 36,24 19,34" fill="#ffd21f"/>
+          </svg>
+        </button>
+      </div>`
+    : `<div class="media-shell__placeholder">Add a YouTube link in clips-media.js</div>`;
 
   return `
     <article class="clip-card reveal">
-      <div class="video-shell drive-shell">${shellContent}</div>
+      <div class="video-shell">${shellContent}</div>
       <h3>${clip.title || "Untitled clip"}</h3>
       ${createClipParagraphs(clip.lines)}
     </article>
@@ -469,8 +471,24 @@ const initClipsMedia = () => {
   if (videosRoot) {
     const videos = media.videos?.length ? media.videos : [];
     videosRoot.innerHTML = videos.length
-      ? videos.map(renderDriveClipCard).join("")
+      ? videos.map(renderVideoClipCard).join("")
       : `<p class="clips-empty">No videos yet. Add entries in clips-media.js.</p>`;
+
+    // Click play button → swap thumbnail for live YouTube iframe
+    videosRoot.querySelectorAll(".video-thumb-wrapper").forEach((wrapper) => {
+      const btn = wrapper.querySelector(".video-thumb-play");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        const embedUrl = wrapper.dataset.embed;
+        if (!embedUrl) return;
+        const iframe = document.createElement("iframe");
+        iframe.src = embedUrl + "&autoplay=1";
+        iframe.allow = "autoplay; fullscreen; encrypted-media; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;border:0;";
+        wrapper.replaceWith(iframe);
+      }, { once: true });
+    });
   }
 
   if (picturesRoot) {
@@ -480,15 +498,13 @@ const initClipsMedia = () => {
       : `<p class="clips-empty">No pictures yet. Add entries in clips-media.js.</p>`;
   }
 
-  document.querySelectorAll("#clipsPictures img").forEach((image) => {
+  document.querySelectorAll("#clipsPictures img, #clipsVideos .video-thumb-img").forEach((image) => {
     if (image.complete && image.naturalWidth > 0) {
       image.classList.add("image-loaded");
     }
     image.addEventListener("load", () => image.classList.add("image-loaded"));
     image.addEventListener("error", () => image.classList.remove("image-loaded"));
   });
-
-  initLazyDriveEmbeds();
 };
 
 const initLazyMemberImages = () => {

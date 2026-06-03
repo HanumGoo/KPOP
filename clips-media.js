@@ -3,15 +3,9 @@ window.CLIPS_MEDIA = {
     {
       title: "KPOP X Supersonic Montagem Edit (by Hanum)",
       lines: ["Music: Supersonic (Montagem Ultra Slowed).", '"Bombarjila Krokodila?"'],
-      drive: "https://drive.google.com/file/d/1Za8wvEV3aDnpJuruVTTEYxmPyInTqsq8/view?usp=sharing",
+      youtube: "https://www.youtube.com/watch?v=muZdBknkoZ4",
     },
-    {
-      title: "Shoulder Dance Pad Thai Meme",
-      lines: [
-        "Kinyis-kinyis ni bos, cepat yg musang join skrng🗿.",
-      ],
-      drive: "https://drive.google.com/file/d/12hA0SWazZaTPUYZeVnL3JYAsiY6F_YjI/view?usp=sharing",
-    },
+    
   ],
   pictures: [
     {
