@@ -682,27 +682,52 @@ if (searchClear && memberSearch) {
 
 updateMemberFilters();
 
+// Derive the RobloxAnime PNG path for a card on-demand (modal only).
+// The filename stem is taken from the card's focus <img> data-src/src attribute
+// so it always matches whatever filename was declared in HTML.
+const getModalAnimeImageSrc = (card) => {
+  const focusImg = card.querySelector(".member-card__image--focus");
+  // Prefer the original declared src (data-src when deferred, src otherwise)
+  const declared = focusImg?.dataset.src || focusImg?.getAttribute("src") || "";
+  if (declared) {
+    // Normalise: strip any .webp extension back to .png so we always serve PNG in the modal
+    return declared.replace(/\.webp$/i, ".png");
+  }
+  // Fallback: build path from member key using the same naming convention as HTML
+  const memberKey = card.dataset.member || "";
+  if (!memberKey) return "";
+  // Capitalise first letter to match filenames like "Yona-1.png"
+  const stem = memberKey.charAt(0).toUpperCase() + memberKey.slice(1);
+  return `assets/members/RobloxAnime/${stem}-1.png`;
+};
+
 document.querySelectorAll(".member-card").forEach((card) => {
   card.addEventListener("click", () => {
     const memberKey = card.dataset.member;
     const member = memberKey ? members[memberKey] || {} : {};
     const cardRank = card.querySelector(".member-card__rank")?.textContent.trim() || "Member";
     const cardName = card.querySelector(".member-card__name")?.textContent.trim() || "Clan Member";
-    const focusImg = card.querySelector(".member-card__image--focus");
     const baseImg = card.querySelector(".member-card__image--base");
-    loadDeferredImage(focusImg);
 
-    const baseImage = baseImg?.src || baseImg?.dataset.src || baseImg?.getAttribute("src");
-    const focusImage = focusImg?.src || focusImg?.dataset.src || focusImg?.getAttribute("src");
-    const cardImage = focusImage || baseImage || member.image;
+    // RobloxAva (base) — already loaded for the card grid, used as fallback
+    const baseImage = baseImg?.src || baseImg?.dataset.src || member.image || "";
 
-    modalRank.textContent = member.rank || cardRank;  
+    // RobloxAnime PNG — derived & fetched ONLY now, when the modal is opening
+    const animeImage = getModalAnimeImageSrc(card);
+    const modalSrc = animeImage || baseImage;
+
+    modalRank.textContent = member.rank || cardRank;
     modalName.textContent = member.name || cardName;
     modalDescription.textContent =
       member.description || `${cardName} adalah anggota klan KPOP. tidak ada informasi yang lebih lengkap.`;
+
+    // Reset image state before assigning new src so load event fires reliably
     modalImage.classList.remove("image-loaded");
-    modalImage.dataset.fallbackSrc = baseImage || member.image || "";
-    modalImage.src = cardImage;
+    modalImage.dataset.fallbackSrc = baseImage;
+    modalImage.removeAttribute("src");
+
+    // Assign src — browser starts downloading only at this point
+    modalImage.src = modalSrc;
     modalImage.alt = `${member.name || cardName} profile image`;
 
     if (modalImage.complete && modalImage.naturalWidth > 0) {
