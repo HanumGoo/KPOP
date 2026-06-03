@@ -1001,6 +1001,7 @@ h3 {
   max-height: min(88vh, 680px);
   display: grid;
   grid-template-columns: minmax(240px, 0.76fr) 1fr;
+  grid-template-rows: 1fr;
   gap: 28px;
   padding: 22px;
   border: 3px solid var(--yellow);
@@ -1011,6 +1012,7 @@ h3 {
   transform: translateY(24px) scale(0.96);
   transition: transform 0.25s ease;
   overflow: hidden;
+  align-items: start;
 }
 
 .modal.is-open .modal__panel {
@@ -1037,11 +1039,13 @@ h3 {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 360px;
+  height: calc(min(88vh, 680px) - 44px);
+  max-height: 100%;
   overflow: hidden;
   border: 2px solid var(--yellow);
   border-radius: 24px;
   background: #111111;
+  align-self: stretch;
 }
 
 .modal__image img {
@@ -1065,6 +1069,7 @@ h3 {
   display: grid;
   align-content: start;
   padding: 24px 20px 24px 0;
+  height: calc(min(88vh, 680px) - 44px);
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -1169,14 +1174,23 @@ h3 {
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    align-items: unset;
   }
 
   .modal__panel::-webkit-scrollbar {
     display: none;
   }
 
+  .modal__image {
+    height: auto;
+    min-height: 260px;
+    align-self: unset;
+  }
+
   .modal__content {
+    height: auto;
     overflow-y: visible;
+    padding: 0 6px 8px;
   }
 
   .hero__content {
@@ -1231,13 +1245,6 @@ h3 {
     font-size: 1rem;
   }
 
-  .modal__content {
-    padding: 0 6px 8px;
-  }
-
-  .modal__image {
-    min-height: 260px;
-  }
 }
 
 @media (max-width: 560px) {
