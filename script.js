@@ -106,12 +106,6 @@ const members = {
     description:
       "Noel, yang lebih dikenal sebagai Ayamkecap, adalah sosok chill yang selalu membawa energi menyenangkan ke dalam klan. Ia menikmati bermain bersama anggota lain sambil terus berusaha mengembangkan dirinya menjadi lebih baik. Dengan sifat santai dan mudah diajak bercanda, Noel membuat suasana terasa lebih hangat tanpa kehilangan sisi seriusnya sebagai petarung kuat. Kehadirannya jadi kombinasi antara kenyamanan, keseruan, dan semangat untuk terus berkembang.",
   },
-  damiungker: {
-    rank: "Members",
-    name: "Damiungker",
-    description:
-      "Damiungker adalah sosok chill yang selalu membawa suasana santai dan menyenangkan ke dalam klan. Dikenal sebagai salah satu petarung kuat sekaligus ‘sultan’ klan, ia punya aura yang membuat orang lain segan tapi tetap nyaman berada di sekitarnya. Meski memiliki banyak hal yang bisa dibanggakan, Damiungker tetap menikmati kebersamaan sederhana bersama anggota lain tanpa perlu terlihat berlebihan.",
-  },
   dikham: {
     rank: "Members",
     name: "Dikham",
