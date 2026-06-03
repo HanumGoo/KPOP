@@ -4,41 +4,227 @@ const members = {
     name: "Yona",
     image: "assets/members/RobloxAva/Yona.png",
     description:
-      "Yona is the Vice President of the clan. She is known for her leadership skills, strategic thinking, and dedication to the clan's success. Yona plays a crucial role in guiding the clan towards achieving its goals and fostering a positive and inclusive community.",
+      "Di balik sikap tegasnya, Yona adalah seseorang yang bikin suasana klan selalu hidup. Sebagai wakil ketua, dia jadi penghubung utama antar anggota — memastikan setiap informasi tersampaikan, setiap voting berjalan, dan setiap orang tetap merasa dilibatkan. Meski sering membawa candaan absurd dan hal-hal konyol, semua orang tahu kalau Yona adalah seseorang yang selalu bisa diandalkan.\n\n\“Kalau informasi belum nyampe ke kalian, berarti kalian gk baca.\” - Yona",
   },
   ghermykenz: {
     rank: "President",
     name: "GhermyKenz",
     image: "assets/members/RobloxAva/GhermyKenz.png",
     description:
-      "GhermyKenz is the President of the clan. He is known for his vision, decision-making abilities, and commitment to the clan's growth and development.",
+      "Sebagai pendiri sekaligus ketua klan, GhermyKenz dikenal karena ketenangan dalam menghadapi berbagai situasi. Ia bukan tipe pemimpin yang banyak bicara atau terlalu ikut campur, bahkan terkadang terlihat sangat ignoran terhadap hal-hal di sekitarnya. Namun di balik sikap itu, kemampuannya dalam bertarung dan menjaga arah klan membuat banyak orang tetap menaruh hormat padanya. Dengan koneksi luas ke berbagai klan lain, kehadirannya menjadi fondasi utama yang menjaga nama klan tetap diperhitungkan.\n\n\"Eh ada apa nih?\" - GhermyKenz",
   },
   kaifiya: {
     rank: "Vice President",
     name: "Kaifiya-H",
     image: "assets/members/RobloxAva/Kaifiya.png",
     description:
-      "Kaifiya Hyouka is the Vice President of the clan. She is known for her leadership skills, strategic thinking, and dedication to the clan's success. Kaifiya plays a crucial role in guiding the clan towards achieving its goals and fostering a positive and inclusive community.",
+      "Kaifiya Hyouka dikenal sebagai sosok yang sulit ditebak — terkadang jutek dan serius, Dengan pembawaannya yang tenang, ia sering menjadi perantara dalam hubungan antar klan, menjaga komunikasi tetap stabil. Di balik ekspresi dinginnya, Kaifiya adalah seseorang yang diam-diam peduli pada keseimbangan dan nama baik klan.\n\n\"Aku adalah bunga sakura yang menari bersama angin. Lembut saat dibutuhkan, kuat saat diperlukan. Dengan sembilan ekor sebagai lambang kekuatan dan hati yang tetap hangat, aku melangkah membawa keindahan, harapan, dan sedikit keajaiban ke dunia.\" 🌸✨🦊",
   },
   hanum: {
     rank: "Members",
     name: "Hanum",
     image: "assets/members/RobloxAva/Hanum.png",
     description:
-      "Hanum is a dedicated member of the clan. And also a great friend to everyone.",
+      "Hanum adalah definisi dari kekacauan yang sebenarnya. Cara bicaranya sering ngelantur ke mana-mana, penuh energi aneh dan vibe freaky yang sulit dijelaskan. Di balik tingkahnya yang tidak jelas, Hanum punya kecerdasan emosional luar biasa dan kemampuan bertarung yang benar-benar mengerikan. Sebagai pembuat official website klan dan pemegang ranking 1 di dunia Dueling Ground, namanya dikenal bukan hanya karena skill dan tekad, tapi juga karena kepribadiannya yang tidak akan pernah bisa digantikan.\n\n\"skbidi bombi?🗿\" - Hanum",
   },
   sisi: {
     rank: "Members",
     name: "Sisi",
     image: "assets/members/RobloxAva/sisi.png",
     description:
-      "Sisi is a loyal and supportive member of the clan. she is always there to lend a helping hand and bring positivity to the group.",
+      "Sisi adalah tipe orang yang selalu berhasil membawa suasana santai ke dalam klan. Dengan sifatnya yang ramah dan fun, dia sering jadi alasan kenapa voice chat atau game session terasa lebih ramai dan menyenangkan. Di balik vibe santainya, Sisi juga dikenal sebagai petarung hebat yang tidak bisa diremehkan. Kadang tingkahnya bisa berubah jadi sedikit freaky dan random, tapi justru itu yang membuat kehadirannya terasa natural dan bikin semua orang nyaman berada di sekitarnya.\n\n\"yang tau cuman yang jago-jago aja.\" - Sisi",
   },
   mister: {
     rank: "Members",
     name: "Mister x",
     description:
-      "Mister x is a valued member of the clan. He is known for his dedication, teamwork, and positive attitude, making him an essential part of the clan's success.",
+      "Mister adalah sosok yang membawa ketenangan di tengah ramainya klan. Dengan kedewasaan dan kecerdasan emosional yang luar biasa, dia sering menjadi tempat orang-orang mencari advice atau sekadar didengarkan. Cara berpikirnya yang dalam membuat setiap kata-katanya terasa berarti, terutama bagi anggota yang sedang menghadapi masalah atau kehilangan arah. Meski dikenal sebagai petarung hebat, kekuatan terbesar Mister justru ada pada kemampuannya memahami emosi manusia dengan cara yang jarang dimiliki orang lain.\n\n\"ditunggu di brokhaven katanya🗿\" - Mister x",
+  },
+  jinmori: {
+    rank: "Members",
+    name: "Jinmori",
+    description:
+      "Jinmori adalah sosok yang selalu haus akan perkembangan dan kekuatan. Dengan kemampuan bertarung yang luar biasa, ia dikenal sebagai salah satu petarung hebat yang sering mengajari anggota lain untuk berkembang lebih jauh. Meski memiliki ambisi terhadap kekuatan absolut, Jinmori tetap membawa vibe santai yang membuat orang nyaman bermain dan belajar bersamanya. Kehadirannya bukan hanya memperkuat klan dalam pertarungan, tapi juga membangun semangat untuk terus berkembang tanpa henti.\n\n\"Kekuatan sejati bukan soal menang sekali. Tapi terus berkembang tanpa batas.\"",
+  },
+  yagi: {
+    rank: "Members",
+    name: "Yagi",
+    description:
+      "Yagi adalah tipe petarung yang tidak pernah perlu banyak menunjukkan dirinya untuk membuat orang lain hormat. Di balik sikap merendah dan pembawaannya yang dewasa, tersembunyi kemampuan bertarung yang luar biasa serta pemahaman mekanik game yang sangat mendalam. Sebagai salah satu petarung hebat dari ‘zaman Heian’, namanya dikenal oleh banyak anggota lama sebagai sosok sepuh yang berpengalaman. Meski menyukai kekuatan, Yagi memilih untuk tidak memamerkannya — membuatnya terasa seperti monster tersembunyi yang hanya serius saat benar-benar diperlukan.\n\n\"Tidak semua kekuatan harus diperlihatkan.\"",
+  },
+  mob: {
+    rank: "Members",
+    name: "Mob",
+    description:
+      "Mob mungkin bukan orang yang paling banyak bicara di klan, tapi kehadirannya hampir selalu terasa. Meski pendiam, ia sangat aktif bermain bersama anggota lain dalam berbagai game, membuat suasana klan tetap hidup setiap harinya. Dengan sifatnya yang santai dan mudah diajak mabar kapan saja, Mob menjadi salah satu orang yang diam-diam menjaga kebersamaan di dalam klan. Tidak banyak kata, tapi selalu ada saat dibutuhkan.\n\n\"Nggak harus banyak ngomong buat tetap ada.\"",
+  },
+  kegelapan: {
+    rank: "Members",
+    name: "Kegelapan",
+    description:
+      "Kegelapan adalah sosok yang membuktikan kalau kekuatan besar tidak selalu datang dengan ego besar. Sebagai salah satu top player di Dueling Ground dengan ranking 5 dunia, kemampuannya sudah tidak perlu diragukan lagi. Meski begitu, ia tetap dikenal sebagai pribadi yang ramah dan sangat menghargai orang lain, terutama mereka yang memiliki tekad dan kemauan untuk berkembang. Kehadirannya memberi rasa hormat sekaligus kenyamanan — sosok kuat yang tetap memperlakukan semua orang dengan baik.\n\n\"Menjadi kuat bukan alasan untuk merendahkan orang lain.\"",
+  },
+  ciel: {
+    rank: "Members",
+    name: "Ciel",
+    description:
+      "Ciel adalah sosok yang masih cukup misterius di dalam klan. Tidak banyak orang benar-benar tahu bagaimana kepribadiannya, karena ia lebih sering hadir dengan tenang tanpa terlalu banyak menunjukkan dirinya. Meski begitu, sikapnya yang ramah membuat kehadirannya tetap diterima dengan baik oleh anggota lain. Kadang terasa seperti orang yang hanya lewat sebentar, tapi tetap meninggalkan kesan nyaman di suasana klan.",
+  },
+  ina: {
+    rank: "Members",
+    name: "Ina",
+    description:
+      "Ina adalah sosok tenang yang jarang banyak bicara, tapi selalu membawa aura kuat ke mana pun ia pergi. Di balik ketertarikannya pada hal-hal imut, tersimpan kekuatan luar biasa yang membuatnya dikenal sebagai salah satu — bahkan mungkin yang terkuat — di dalam klan. Ia mengagumi kekuatan dan perkembangan diri, namun tidak pernah merasa perlu menunjukkannya secara berlebihan. Dengan pembawaan dewasa dan sikap yang kalem, Ina menjadi sosok yang diam-diam dihormati oleh banyak anggota.",
+  },
+  suns: {
+    rank: "Members",
+    name: "Suns",
+    description:
+      "Suns adalah sosok dewasa yang selalu membawa suasana nyaman dalam setiap percakapan. Ia dikenal sebagai salah satu petarung terkuat di klan, dengan ketertarikan besar terhadap kekuatan dan perkembangan diri. Di luar itu, Suns juga punya sisi unik yang membuatnya menonjol — ia menikmati cross dressing sebagai bentuk ekspresi dirinya tanpa kehilangan aura tenang dan dewasanya. Dengan selera humor yang natural dan cara berbicara yang asik, Suns sering membuat obrolan klan terasa lebih hidup dan menyenangkan.",
+  },
+  doms: {
+    rank: "Members",
+    name: "Doms",
+    description:
+      "Doms adalah salah satu sosok yang hadir dengan sederhana di dalam klan. Tidak banyak informasi atau hal mencolok tentang dirinya, namun ia tetap menjaga hubungan yang baik dengan anggota lain dan menjadi bagian dari suasana klan itu sendiri. Kadang, orang seperti Doms justru memberi warna lewat kehadiran yang santai dan tidak dibuat-buat.",
+  },
+  adly: {
+    rank: "Members",
+    name: "Adly",
+    description:
+      "Adly adalah sosok yang membawa vibe santai dan dewasa ke dalam klan. Tidak suka membuat keributan, ia lebih menikmati kebersamaan sederhana lewat bermain bersama anggota lain dan menjaga suasana tetap nyaman. Cara bicaranya tenang, pembawaannya chill, dan kehadirannya sering jadi penyeimbang di tengah chaos yang ada di klan.",
+  },
+  alex: {
+    rank: "Members",
+    name: "Alex",
+    description:
+      "Alex dikenal sebagai sosok chill yang selalu membawa suasana santai saat bermain bersama klan. Di balik pembawaannya yang tenang, ia juga merupakan petarung kuat yang mampu menghadapi situasi serius tanpa banyak bicara. Hubungannya yang baik dengan anggota lain membuatnya mudah diajak bermain kapan saja, menjadikan kehadirannya terasa nyaman dan natural di dalam klan.",
+  },
+  ayamkecap: {
+    rank: "Members",
+    name: "Ayamkecap",
+    description:
+      "Noel, yang lebih dikenal sebagai Ayamkecap, adalah sosok chill yang selalu membawa energi menyenangkan ke dalam klan. Ia menikmati bermain bersama anggota lain sambil terus berusaha mengembangkan dirinya menjadi lebih baik. Dengan sifat santai dan mudah diajak bercanda, Noel membuat suasana terasa lebih hangat tanpa kehilangan sisi seriusnya sebagai petarung kuat. Kehadirannya jadi kombinasi antara kenyamanan, keseruan, dan semangat untuk terus berkembang.",
+  },
+  damiungker: {
+    rank: "Members",
+    name: "Damiungker",
+    description:
+      "Damiungker adalah sosok chill yang selalu membawa suasana santai dan menyenangkan ke dalam klan. Dikenal sebagai salah satu petarung kuat sekaligus ‘sultan’ klan, ia punya aura yang membuat orang lain segan tapi tetap nyaman berada di sekitarnya. Meski memiliki banyak hal yang bisa dibanggakan, Damiungker tetap menikmati kebersamaan sederhana bersama anggota lain tanpa perlu terlihat berlebihan.",
+  },
+  dikham: {
+    rank: "Members",
+    name: "Dikham",
+    description:
+      "Dikham adalah sosok dengan vibe chill yang selalu terasa unik di dalam klan. Tingkahnya yang kadang freaky dan aneh sering membuat suasana jadi lebih hidup dan tidak membosankan. Sebagai mantan ketua dari klan Hoshi, ia punya pengalaman dan kehadiran yang cukup dihormati, apalagi karena dirinya masih sering aktif dalam berbagai aktivitas klan. Di balik semua keanehan dan candaan random-nya, Dikham tetap dikenal sebagai orang yang menyenangkan dan mudah akrab dengan siapa saja.",
+  },
+  frost: {
+    rank: "Members",
+    name: "Frost",
+    description:
+      "Frost adalah sosok santai yang selalu membawa semangat positif ke dalam klan. Dengan pembawaannya yang chill dan easygoing, ia mudah akrab dengan anggota lain dan membuat suasana terasa lebih nyaman. Di balik sifat santainya, Frost juga dikenal sebagai petarung kuat yang tetap serius saat dibutuhkan. Kombinasi energi semangat dan vibe tenangnya membuat kehadirannya terasa menyenangkan di mana pun ia berada.",
+  },
+  fuga: {
+    rank: "Members",
+    name: "Fuga",
+    description:
+      "Fuga dikenal sebagai sosok chill yang penuh semangat dan selalu membawa energi positif saat bermain bersama klan. Ia punya sifat santai yang membuat orang mudah nyaman di dekatnya, tapi tetap menunjukkan sisi seriusnya ketika berada dalam pertarungan. Sebagai salah satu petarung kuat di klan, Fuga membuktikan kalau seseorang tetap bisa menikmati suasana tanpa kehilangan tekad dan kemampuan.",
+  },
+  ver: {
+    rank: "Members",
+    name: "Ver",
+    description:
+      "Ver adalah sosok santai yang selalu membawa energi positif ke dalam klan. Dengan sifatnya yang chill dan penuh semangat, ia mudah bergaul dan senang mengenal orang-orang baru, membuat suasana terasa lebih hidup setiap kali ia hadir. Di balik pembawaannya yang ramah, Frost juga dikenal sebagai petarung kuat yang mampu serius saat keadaan membutuhkannya. Kehadirannya memberi kombinasi antara kenyamanan, semangat, dan kekuatan.",
+  },
+  justfaa: {
+    rank: "Members",
+    name: "Justfaa",
+    description:
+      "Justfaa adalah sosok yang membawa energi besar ke dalam klan. Dengan sifat chill, penuh semangat, dan sedikit chaotic, ia sering membuat suasana jadi lebih ramai dan hidup. Sebagai petarung kuat yang aktif dalam berbagai aktivitas, Justfaa dikenal bukan cuma karena skill-nya, tapi juga karena sifat baik dan vibe santainya yang mudah membuat orang nyaman. Di tengah chaos yang ia bawa, selalu ada aura positif yang bikin orang betah bermain bersamanya.",
+  },
+  knle: {
+    rank: "Members",
+    name: "Knle",
+    description:
+      "Knle adalah petarung kuat asal Korea yang dikenal karena kombinasi antara sifat santai dan keseriusannya saat bertarung. Di luar pertarungan, ia membawa vibe chill dan penuh semangat yang membuat hubungan dengan anggota lain terasa nyaman dan akrab. Namun ketika situasi mulai serius, Knlee mampu menunjukkan fokus dan kemampuan luar biasa yang membuatnya dihormati sebagai salah satu petarung kuat di klan.",
+  },
+  mori: {
+    rank: "Members",
+    name: "mori",
+    description:
+      "Mori adalah sosok yang membawa keseimbangan antara semangat dan ketenangan di dalam klan. Dengan sifat chill namun tetap serius saat diperlukan, ia dikenal sebagai petarung yang sangat kuat sekaligus pribadi yang nyaman diajak bermain bersama. Kehadirannya sering memberi energi positif bagi anggota lain, membuat suasana tetap santai tanpa kehilangan fokus ketika situasi mulai menegang.",
+  },
+  panes: {
+    rank: "Members",
+    name: "Panes",
+    description:
+      "Panes adalah sosok santai yang selalu membawa energi menyenangkan ke dalam klan. Dengan sifatnya yang chill, penuh semangat, dan easygoing, ia mudah membuat suasana jadi lebih ramai dan nyaman. Dikenal sebagai alter ego dari Sisi, Panes membawa vibe yang sama-sama hangat namun dengan warna chaos dan keseruannya sendiri. Kehadirannya membuat interaksi di klan terasa lebih hidup dan penuh tawa.",
+  },
+  ryofirdaus: {
+    rank: "Members",
+    name: "Ryofirdaus",
+    description:
+      "Ryo adalah sosok yang membawa kehangatan alami ke dalam klan. Dengan sifat chill, penuh semangat, dan menyenangkan, ia mudah membuat orang merasa nyaman dalam setiap interaksi. Sebagai seorang streamer, Ryo terbiasa membangun suasana hidup dan seru, sesuatu yang juga terasa kuat saat ia bersama anggota klan. Kehadirannya membuat klan terasa lebih ramai, hangat, dan penuh energi positif.",
+  },
+  ipaw: {
+    rank: "Members",
+    name: "Ipaw",
+    description:
+      "Ipaw adalah sosok yang pernah dikenal sebagai salah satu legenda di dalam klan. Dengan sifat chill, penuh semangat, dan menyenangkan, ia selalu membawa suasana nyaman setiap kali bermain bersama anggota lain. Dahulu dikenal sebagai mantan ranking satu, namanya sempat menjadi simbol kekuatan dan kemampuan luar biasa. Meski kini jarang terlihat dan seperti menghilang dari keramaian, jejak dan kenangannya masih tetap melekat di dalam klan.",
+  },
+  raps: {
+    rank: "Members",
+    name: "Raps",
+    description:
+      "Raps adalah sosok humoris yang selalu berhasil membuat suasana klan terasa lebih hidup. Dengan sifat santai dan kebiasaannya bercanda, ia mudah akrab dengan siapa saja dan sering jadi sumber tawa di tengah aktivitas klan. Di balik kepribadiannya yang fun dan easygoing, Ipaw juga dikenal sebagai salah satu orang kuat yang aktif membantu meramaikan klan. Kehadirannya membawa kombinasi antara kekuatan, kenyamanan, dan hiburan.",
+  },
+  syn: {
+    rank: "Members",
+    name: "Syn",
+    description:
+      "Syn adalah sosok dewasa yang tahu cara menjaga suasana tetap nyaman tanpa kehilangan sisi humornya. Ia sering bercanda dan membuat obrolan klan terasa lebih santai, namun tetap membawa aura tenang yang membuat orang lain menghormatinya. Sebagai salah satu anggota kuat yang aktif di klan, Syn bukan hanya hadir untuk bermain, tapi juga menjadi bagian dari energi positif yang menjaga kebersamaan tetap hidup.",
+  },
+  pikoo: {
+    rank: "Members",
+    name: "Pikoo",
+    description:
+      "Pikoo adalah sosok santai yang selalu membawa suasana hangat ke dalam klan. Dengan sifat dewasa dan humor yang natural, ia mudah membuat obrolan terasa hidup tanpa pernah kehilangan pembawaannya yang tenang. Selain aktif dalam berbagai aktivitas klan, Pikoo juga dikenal sebagai salah satu anggota kuat yang mampu serius saat dibutuhkan. Kehadirannya memberi keseimbangan antara keseruan dan ketenangan di dalam komunitas.",
+  },
+  user: {
+    rank: "Members",
+    name: "",
+    description:
+      "",
+  },
+  user: {
+    rank: "Members",
+    name: "",
+    description:
+      "",
+  },
+  user: {
+    rank: "Members",
+    name: "",
+    description:
+      "",
+  },
+  user: {
+    rank: "Members",
+    name: "",
+    description:
+      "",
+  },
+  user: {
+    rank: "Members",
+    name: "",
+    description:
+      "",
+  },
+  user: {
+    rank: "Members",
+    name: "",
+    description:
+      "",
   },
 };
 
@@ -500,10 +686,10 @@ document.querySelectorAll(".member-card").forEach((card) => {
     const focusImage = focusImg?.src || focusImg?.dataset.src || focusImg?.getAttribute("src");
     const cardImage = focusImage || baseImage || member.image;
 
-    modalRank.textContent = member.rank || cardRank;
+    modalRank.textContent = member.rank || cardRank;  
     modalName.textContent = member.name || cardName;
     modalDescription.textContent =
-      member.description || `${cardName} is one of the ${cardRank.toLowerCase()} of the clan.`;
+      member.description || `${cardName} adalah anggota klan KPOP. tidak ada informasi yang lebih lengkap.`;
     modalImage.classList.remove("image-loaded");
     modalImage.dataset.fallbackSrc = baseImage || member.image || "";
     modalImage.src = cardImage;

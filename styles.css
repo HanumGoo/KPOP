@@ -1278,3 +1278,7 @@ h3 {
     transition-duration: 0.001ms !important;
   }
 }
+
+#modalDescription {
+  white-space: pre-line;
+}
