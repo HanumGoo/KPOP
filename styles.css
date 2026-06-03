@@ -998,7 +998,7 @@ h3 {
 .modal__panel {
   position: relative;
   width: min(920px, 100%);
-  max-height: min(88vh, 680px);
+  height: min(88vh, 680px);
   display: grid;
   grid-template-columns: minmax(240px, 0.76fr) 1fr;
   grid-template-rows: 1fr;
@@ -1012,7 +1012,7 @@ h3 {
   transform: translateY(24px) scale(0.96);
   transition: transform 0.25s ease;
   overflow: hidden;
-  align-items: start;
+  align-items: stretch;
 }
 
 .modal.is-open .modal__panel {
@@ -1039,8 +1039,8 @@ h3 {
   position: relative;
   display: grid;
   place-items: center;
-  height: calc(min(88vh, 680px) - 44px);
-  max-height: 100%;
+  height: 100%;
+  min-height: 0;
   overflow: hidden;
   border: 2px solid var(--yellow);
   border-radius: 24px;
@@ -1066,20 +1066,16 @@ h3 {
 }
 
 .modal__content {
-  display: grid;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
   padding: 24px 20px 24px 0;
-  height: calc(min(88vh, 680px) - 44px);
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.modal__content::-webkit-scrollbar {
-  display: none;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .modal__rank {
+  flex-shrink: 0;
   margin: 0 0 12px;
   color: var(--yellow);
   font-weight: 950;
@@ -1088,13 +1084,46 @@ h3 {
 }
 
 .modal__content h2 {
+  flex-shrink: 0;
   font-size: clamp(2.25rem, 5vw, 4.6rem);
+  margin-bottom: 16px;
 }
 
-.modal__content p:last-child {
+.modal__description {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 210, 31, 0.45) transparent;
+  padding-right: 6px;
+  /* Fade hint at the bottom when content overflows */
+  mask-image: linear-gradient(to bottom, black calc(100% - 32px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 32px), transparent 100%);
+}
+
+.modal__description::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal__description::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal__description::-webkit-scrollbar-thumb {
+  background: rgba(255, 210, 31, 0.45);
+  border-radius: 999px;
+}
+
+.modal__description::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 210, 31, 0.75);
+}
+
+.modal__content p:last-child,
+.modal__description p {
   color: rgba(255, 255, 255, 0.74);
   font-size: 1.04rem;
   line-height: 1.8;
+  margin: 0;
 }
 
 .reveal {
@@ -1170,6 +1199,7 @@ h3 {
   }
 
   .modal__panel {
+    height: auto;
     max-height: 90vh;
     overflow-y: auto;
     scrollbar-width: none;
@@ -1191,6 +1221,11 @@ h3 {
     height: auto;
     overflow-y: visible;
     padding: 0 6px 8px;
+  }
+
+  .modal__description {
+    overflow-y: visible;
+    min-height: unset;
   }
 
   .hero__content {
