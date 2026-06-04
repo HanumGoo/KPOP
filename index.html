@@ -705,14 +705,18 @@
         <button class="modal__close" type="button" data-close-modal aria-label="Close profile">
           ×
         </button>
-        <div class="modal__image">
-          <img id="modalImage" alt="" />
-          <span>Loading...</span>
+        <div class="modal__static">
+          <div class="modal__image">
+            <img id="modalImage" alt="" />
+            <span>Loading...</span>
+          </div>
         </div>
-        <div class="modal__content">
+        <div class="modal__content-right">
           <p class="modal__rank" id="modalRank"></p>
           <h2 id="modalName"></h2>
-          <p id="modalDescription"></p>
+          <div class="modal__description">
+            <p id="modalDescription"></p>
+          </div>
         </div>
       </article>
     </div>
