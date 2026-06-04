@@ -128,7 +128,7 @@ const members = {
     rank: "Members",
     name: "Ver",
     description:
-      "Ver adalah sosok santai yang selalu membawa energi positif ke dalam klan. Dengan sifatnya yang chill dan penuh semangat, ia mudah bergaul dan senang mengenal orang-orang baru, membuat suasana terasa lebih hidup setiap kali ia hadir. Di balik pembawaannya yang ramah, Frost juga dikenal sebagai petarung kuat yang mampu serius saat keadaan membutuhkannya. Kehadirannya memberi kombinasi antara kenyamanan, semangat, dan kekuatan.",
+      "Ver adalah sosok santai yang selalu membawa energi positif ke dalam klan. Dengan sifatnya yang chill dan penuh semangat, ia mudah bergaul dan senang mengenal orang-orang baru, membuat suasana terasa lebih hidup setiap kali ia hadir. Di balik pembawaannya yang ramah, Ver juga dikenal sebagai petarung kuat yang mampu serius saat keadaan membutuhkannya. Kehadirannya memberi kombinasi antara kenyamanan, semangat, dan kekuatan.",
   },
   justfaa: {
     rank: "Members",
