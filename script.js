@@ -38,7 +38,7 @@ const members = {
     rank: "Members",
     name: "Mister x",
     description:
-      "Mister adalah sosok yang membawa ketenangan di tengah ramainya klan. Dengan kedewasaan dan kecerdasan emosional yang luar biasa, dia sering menjadi tempat orang-orang mencari advice atau sekadar didengarkan. Cara berpikirnya yang dalam membuat setiap kata-katanya terasa berarti, terutama bagi anggota yang sedang menghadapi masalah atau kehilangan arah. Meski dikenal sebagai petarung hebat, kekuatan terbesar Mister justru ada pada kemampuannya memahami emosi manusia dengan cara yang jarang dimiliki orang lain.\n\n\"ditunggu di brokhaven katanya🗿\" - Mister x",
+      "Mister adalah sosok yang membawa ketenangan di tengah ramainya klan. Dengan kedewasaan dan kecerdasan emosional yang luar biasa, dia sering menjadi tempat orang-orang mencari advice atau sekadar didengarkan. Cara berpikirnya yang dalam membuat setiap kata-katanya terasa berarti, terutama bagi anggota yang sedang menghadapi masalah atau kehilangan arah. Meski dikenal sebagai petarung hebat, kekuatan terbesar Mister justru ada pada kemampuannya memahami emosi manusia dengan cara yang jarang dimiliki orang lain.\n\n\"Dingin tapi tampan, tidak pernah basa basi. Semua wanita ingin memilikinya, tapi dia tidak pernah tertarik dengan mereka.\"",
   },
   jinmori: {
     rank: "Members",
