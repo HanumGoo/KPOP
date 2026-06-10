@@ -4,14 +4,14 @@ const members = {
     name: "Yona",
     image: "assets/members/RobloxAva/Yona.png",
     description:
-      "Di balik sikap tegasnya, Yona adalah seseorang yang bikin suasana klan selalu hidup. Sebagai wakil ketua, dia jadi penghubung utama antar anggota — memastikan setiap informasi tersampaikan, setiap voting berjalan, dan setiap orang tetap merasa dilibatkan. Meski sering membawa candaan absurd dan hal-hal konyol, semua orang tahu kalau Yona adalah seseorang yang selalu bisa diandalkan.\n\n\“Kalau informasi belum nyampe ke kalian, berarti kalian gk baca.\” - Yona",
+      "Di balik sikap tegasnya, Yona adalah seseorang yang bikin suasana klan selalu hidup. Sebagai wakil ketua, dia jadi penghubung utama antar anggota — memastikan setiap informasi tersampaikan, setiap voting berjalan, dan setiap orang tetap merasa dilibatkan. Meski sering membawa candaan absurd dan hal-hal konyol, semua orang tahu kalau Yona adalah seseorang yang selalu bisa diandalkan.\n\n\“blub blub blub -🐟\” - Yona",
   },
   ghermykenz: {
     rank: "President",
     name: "GhermyKenz",
     image: "assets/members/RobloxAva/GhermyKenz.png",
     description:
-      "Sebagai pendiri sekaligus ketua klan, GhermyKenz dikenal karena ketenangan dalam menghadapi berbagai situasi. Ia bukan tipe pemimpin yang banyak bicara atau terlalu ikut campur, bahkan terkadang terlihat sangat ignoran terhadap hal-hal di sekitarnya. Namun di balik sikap itu, kemampuannya dalam bertarung dan menjaga arah klan membuat banyak orang tetap menaruh hormat padanya. Dengan koneksi luas ke berbagai klan lain, kehadirannya menjadi fondasi utama yang menjaga nama klan tetap diperhitungkan.\n\n\"Eh ada apa nih?\" - GhermyKenz",
+      "Sebagai pendiri sekaligus ketua klan, GhermyKenz dikenal karena ketenangan dalam menghadapi berbagai situasi. Ia bukan tipe pemimpin yang banyak bicara atau terlalu ikut campur, bahkan terkadang terlihat sangat ignoran terhadap hal-hal di sekitarnya. Namun di balik sikap itu, kemampuannya dalam bertarung dan menjaga arah klan membuat banyak orang tetap menaruh hormat padanya. Dengan koneksi luas ke berbagai klan lain, kehadirannya menjadi fondasi utama yang menjaga nama klan tetap diperhitungkan.\n\n\"Nak kasih jurus special, jumsot!\" - GhermyKenz",
   },
   kaifiya: {
     rank: "Vice President",
