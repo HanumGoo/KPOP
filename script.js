@@ -4,7 +4,7 @@ const members = {
     name: "Yona",
     image: "assets/members/RobloxAva/Yona.png",
     description:
-      "Di balik sikap tegasnya, Yona adalah seseorang yang bikin suasana klan selalu hidup. Sebagai wakil ketua, dia jadi penghubung utama antar anggota — memastikan setiap informasi tersampaikan, setiap voting berjalan, dan setiap orang tetap merasa dilibatkan. Meski sering membawa candaan absurd dan hal-hal konyol, semua orang tahu kalau Yona adalah seseorang yang selalu bisa diandalkan.\n\n\“blub blub blub -🐟\” - Yona",
+      "Di balik sikap tegasnya, Yona adalah seseorang yang bikin suasana klan selalu hidup. Sebagai wakil ketua, dia jadi penghubung utama antar anggota — memastikan setiap informasi tersampaikan, setiap voting berjalan, dan setiap orang tetap merasa dilibatkan. Meski sering membawa candaan absurd dan hal-hal konyol, semua orang tahu kalau Yona adalah seseorang yang selalu bisa diandalkan.\n\n\“blub blub blub\” - 🐟",
   },
   ghermykenz: {
     rank: "President",
